@@ -29,25 +29,17 @@ class Car extends Vehicle
 
     public function start(): string
     {
-        try
-        {
-            if ($this->hasParkBrake) {
-                throw new Exception('Park brake !!');
+        if ($this->hasParkBrake) {
+            throw new Exception('Park brake !!');
+        } else {
+            $sentence = "";
+            while ($this->currentSpeed <50) {
+                $this->currentSpeed = $this->currentSpeed + 10;
+                $sentence .= "Go! ";
             }
-        } catch (Exception $exception)
-        {
-            $this -> hasParkBrake = false;
-        } finally {
-            echo 'Ma voiture roule comme un donut';
+            $sentence .= "Okay ! ";
+            return $sentence;
         }
-
-        $sentence = "";
-        while ($this->currentSpeed <50) {
-            $this->currentSpeed = $this->currentSpeed + 10;
-            $sentence .= "Go! ";
-        }
-        $sentence .= "Okay ! ";
-        return $sentence;
 
     }
 
