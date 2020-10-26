@@ -78,7 +78,7 @@ finally
     echo 'Ma voiture roule comme un donut';
 }
 
-echo $twingo -> start();
+
 
 var_dump($twingo);
 

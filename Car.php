@@ -31,15 +31,16 @@ class Car extends Vehicle
     {
         if ($this->hasParkBrake) {
             throw new Exception('Park brake !!');
-        } else {
-            $sentence = "";
-            while ($this->currentSpeed <50) {
-                $this->currentSpeed = $this->currentSpeed + 10;
-                $sentence .= "Go! ";
-            }
-            $sentence .= "Okay ! ";
-            return $sentence;
         }
+
+        $sentence = "";
+        while ($this->currentSpeed <50) {
+            $this->currentSpeed = $this->currentSpeed + 10;
+            $sentence .= "Go! ";
+        }
+        $sentence .= "Okay ! ";
+        return $sentence;
+
 
     }
 
