@@ -71,6 +71,7 @@ try
 }
 catch (Exception $exception)
 {
+    echo 'Impossible de démarrer : ' . $exception->getMessage();
     $twingo -> setParkPBrake(false);
 }
 finally
